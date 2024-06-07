@@ -1,8 +1,9 @@
-﻿namespace Start
+﻿using System.ComponentModel.Design;
+
+namespace Start
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
             Console.WriteLine("Hej og Velkommen til starter opgaverne!");
@@ -22,7 +23,7 @@
             Console.WriteLine($"Her starter opgave: {opgavenavn}");
             Console.WriteLine("");
         }
-
+        static int randomnumber;
         static void VariablerOgOperatører()
         {
             header("VariablerOgOperatører");
@@ -35,24 +36,79 @@
 
             Console.WriteLine("2. Lav et program som skriver et tilfældigt tal ud i konsollen");
 
-            int randomnumber = 0;
+            int mindsteværdi = 0;
+            int maximumværdi = 100;
+            Random random = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                randomnumber = random.Next(mindsteværdi, maximumværdi);
+                //ligeellerulige();
+            }
+
+
 
             Console.WriteLine("3. Skriv en variable ind i en streng ved brug af $-tegnet");
 
             string input = "Indsæt mig i en anden streng";
 
-            Console.WriteLine("Indsæt input herefter: ");
+            //Console.WriteLine("Indsæt input herefter: " + input);
+            Console.WriteLine($"Indsæt input herefter: {input}");
         }
-
-
+        static int num;
+        static int valgtTal;
+        static bool lige;
+        //static void ligeellerulige()
+        //{
+            //num = randomnumber;
+            //if (num % 2 == 0)
+            //{
+            //    Console.WriteLine($"{num} er lige");
+            //    lige = true;
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"{num} er ulige");
+            //    lige= false;
+            //}
+            //if (valgtTal == 0)
+            //{
+            //    
+            //}
+            //int valgtTal 
+            //if (valgtTal != 0 & valgtTal % 5 == 0)
+            //{
+            //    Console.WriteLine($"{valgtTal} går op i 5");
+            //    lige = true;
+            //}
+            //else
+            //{
+            //    lige = false;
+            //    Console.WriteLine($"{valgtTal} går ikke op i 5");
+            //}
+        //}
         static void Conditionals()
         {
             header("Conditionals - If / Else statements");
 
             Console.WriteLine("1. I skal skrive et stykke kode som fortæller om et tal (int) er lige eller ulige");
+            //se ligeellerulige
 
             Console.WriteLine("2. 1. I skal skrive et stykke kode som fortæller om 5 går op i det tal som i vælger (int). \n Hvis den går op i det skal i skrive: 5 går op i (det tal i har valgt)");
 
+            //int valgtTal = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine($"Det valgte tal: {valgtTal}");
+            
+            //ligeellerulige();
+
+            //if (lige == true)
+            //{
+            //    Console.WriteLine($"{valgtTal} går op i 5");
+            //}
+            //if (lige == false)
+            //{
+            //    Console.WriteLine($"{valgtTal} går ikke op i 5");
+            //}
+            Console.WriteLine($"5 går op i{valgtTal}");
             Console.WriteLine("3. Lav opgave 2 igen, men i stedet for selv at vælge et tal skal i lave sådan at den selv vælger et tal mellem 0 og 100.");
 
             Console.WriteLine("4. Lav et program som fortæller jer hvilke af de her 3 tal der er størst.\r\n a = 25; b = 33; c = 12;");
@@ -70,13 +126,25 @@
 
             List<string> byer1 = new List<string> { "Randers", "Viborg", "Aarhus", "København" };
 
+            string viborg = byer1[1];
+            Console.WriteLine(viborg);
+
             Console.WriteLine("2. Tilføj “Skive” til denne array");
 
             List<string> byer2 = new List<string> { "Randers", "Viborg", "Aarhus", "København" };
 
+            //byer2.Append<string>("Skive");
+            byer2.Add("Skive");
+            string Skive = byer2[4];
+            Console.WriteLine(Skive);
+
             Console.WriteLine("3. Erstat den værdi, uden at ændre direkte i listen, som ikke passer ind, så listen stemmer");
 
             List<int> talrække1 = new List<int> { 0, 1, 0, 3, 4, 5, 6 };
+
+            talrække1.Insert(2, 2);
+
+            Console.WriteLine(talrække1);
 
             Console.WriteLine("4. Skriv, i konsollen, den største værdi fra følgende liste. Selvfølgelig ikke manuelt");
 
