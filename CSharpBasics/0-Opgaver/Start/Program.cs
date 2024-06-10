@@ -118,6 +118,8 @@ namespace Start
             Console.WriteLine("6. Lav et program som omformer tal til ugedage ved brug af Conditionals, som eksempel nedenunder:\r\n    \r\n    Den 1. dag i ugen er mandag\r\n    \r\n    Den 2. dag i ugen er tirsdag \r\n    \r\n    Den 4. dag i ugen er Torsdag osv.");
 
         }
+        static int højestetal = 0;
+        static int højestetal2 = 0;
         static void Arrays()
         {
             header("Arrays");
@@ -142,21 +144,48 @@ namespace Start
 
             List<int> talrække1 = new List<int> { 0, 1, 0, 3, 4, 5, 6 };
 
-            talrække1.Insert(2, 2);
+            //talrække1.Insert(2, 2);
+            talrække1[2] = 2;
 
-            Console.WriteLine(talrække1);
+            Console.WriteLine(String.Join("",talrække1));
 
             Console.WriteLine("4. Skriv, i konsollen, den største værdi fra følgende liste. Selvfølgelig ikke manuelt");
 
             List<int> talrække2 = new List<int> { 1, 2, 3, 4, 11, 55, 99, 100 };
 
+            int indexlængde = talrække2.Count;
+            
+            for (int i = 0; i <= indexlængde -1; i++)
+            {
+                int højestetal2 = Convert.ToInt32(talrække2[i]);
+                if (højestetal2 > højestetal);
+                {
+                    højestetal = højestetal2;
+                }
+                if (i == indexlængde -1)
+                {
+                    højestetal2.ToString();
+                    Console.WriteLine(højestetal2);
+                }
+            }
+
             Console.WriteLine("5. Sorter den her liste:");
 
             List<int> talrække3 = new List<int> { 0, 12, 0, 22, 300, 4, 5 };
 
+            talrække3.Sort();
+            talrække3.ForEach(Console.WriteLine);
+            
+
+
             Console.WriteLine("6. Sorter den her liste i omvendt rækkefølge:");
 
             List<int> talrække4 = new List<int> { 0, 12, 0, 22, 300, 4, 5 };
+            talrække4.Sort();
+            talrække4.Reverse();
+            talrække4.ForEach(Console.WriteLine);
+
+
         }
         static void LoopsMedArraysOgAndreDatatyper()
         {
@@ -166,7 +195,18 @@ namespace Start
 
             List<int> talrække1 = new List<int> { 0, 12, 0, 22, 300, 4, 5 };
 
-            Console.WriteLine("2. Lav et program som skriver alle værdierne i denne liste, ved brug af foreach: ");
+            int tal1 = talrække1[0];
+            for (int i = 0; i <= talrække1.Count; i++)
+            {
+                tal1 = tal1 + talrække1[i];
+                
+                if (i == talrække1.Count)
+                {
+                    tal1.ToString();
+                    Console.WriteLine(tal1);
+                }
+            }
+                Console.WriteLine("2. Lav et program som skriver alle værdierne i denne liste, ved brug af foreach: ");
 
             List<int> talrække2 = new List<int> { 0, 12, 0, 22, 300, 4, 5 };
 
